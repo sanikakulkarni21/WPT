@@ -1,0 +1,17 @@
+{
+  "name": "tflstore",
+  "version": "1.0.0",
+  "description": "simple online wen application using node js and express and mysql database",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "sanika kulkarni",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.15.1",
+    "mysql": "^2.18.1"
+  }
+}

@@ -1,0 +1,6 @@
+[{"id":1,"name":"Rose","description":"weeding Flower","price":10,"quantity":5000,"imageurl":"/images/rose.jpg","likes":45000},
+            {"id":2,"name":"marigold","description":"weeding Flower","price":10,"quantity":5000,"imageurl":"/images/marigold.jpg","likes":45000},
+            {"id":3,"name":"lily","description":"weeding Flower","price":10,"quantity":5000,"imageurl":"/images/lily.jpg","likes":45000},
+            {"id":4,"name":"jasmine","description":"weeding Flower","price":10,"quantity":5000,"imageurl":"/images/jasmine.jpg","likes":45000}
+        ]
+

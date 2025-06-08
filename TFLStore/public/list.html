@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>product catalog </title>
+
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    <body>
+        
+        <h1>todays fresh flowers available for sale...</h1>
+        <hr/>
+       <button>GetFlowers</button>
+        <ol id="flowerslist">
+            
+        </ol>
+        <p id="para"></p>
+        <script>
+
+            //ajax
+            //step2 : Write event handler for document.ready
+            //dodument.addEventListener("");  ----this is not need now if you are using jquery
+               
+            
+            $(document).ready(function(){
+                //step 3: add event handler for button click
+                //get element id by button
+                 console.log("document is ready");
+                //button.addEventListener("click",function(){} ---instesd write->
+                    console.log("button is clicked");
+                    //step 4: get data from server using $.get method
+                    var p= document.getElementById("para");
+
+                    //make aschronous javascript call using $.get
+                    //make first parameter as relative url of your web api (rest API)
+                    //second parameter is always a callback function which will be invoked on received response from server REST API
+                    //
+                    $.get("api/flowers",function(data,status){
+                        //step 5: fetch data and iterate to show each flowername using paragraph element
+                        for(var i=0;i<data.length;i++){
+                          console.log(data[i].name);
+                         // var ol=document.getElementById("flowerslist");
+                         // ol.appendChild(document.createElement("li")).innerHTML=data[i].name;
+                          p.innerHTML=p.innerHTML+" "+data[i].name ;
+                        }
+                        //alert("Data:"+JSON.stringify(data) +"\nstatus:"+status);
+                        //console.log(data);
+                    });
+                });
+                
+            $("button").click(function(){
+            console.log("button is clicked");
+            var p= document.getElementById("para");
+
+            //make aschronous javascript call using $.get
+            //make first parameter as relative url of ypur web api (rest API)
+            //second parameter is always a callback function whoich will be invoked on received response from server REST API
+            //
+            $.get("api/flowers",function(data,status){
+                for(var i=0;i<data.length;i++){
+                  console.log(data[i].name);
+                 // var ol=document.getElementById("flowerslist");
+                 // ol.appendChild(document.createElement("li")).innerHTML=data[i].name;
+                  p.innerHTML=p.innerHTML+" "+data[i].name ;
+                }
+                //alert("Data:"+JSON.stringify(data) +"\nstatus:"+status);
+                //console.log(data);
+            });
+            });
+        
+        
+
+
+            //fetch data from server
+            
+            //handling asynchronous request using async function
+            async function getFlowersFromTFLStore(){
+              var flowersUrl="http://localhost:9898/api/flowers";
+
+              //any function you invoke putside is going to be by nature asynchronous
+              try{
+                  let response= await fetch(flowersUrl);
+                  console.log(response.body);
+            }
+               catch(error){
+                console.log(err);
+               }
+              }
+              
+             //function is invoked here
+            getFlowersFromTFLStore(); 
+        </script>
+
+        
+
+        <a href="list.html">flowers</a> |<a href="login.html">Login</a>
+    </hr>
+
+    </body>
+</html>
