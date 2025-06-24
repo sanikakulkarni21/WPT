@@ -9,6 +9,29 @@
     <body>
         <button>Send Data</button>
         
+        <script>
+             $(document).ready(function(){
+                $("button").click(function(){
+                   
+                    //send data to rest api
+                    //http://localhost:9898/api/register
+                  //this is a javascript object created at client side 
+                    var newCustomer ={
+                        "id":32,
+                        "firstName": "sanika",
+                        "lastName": "kulkarni",
+                        "email": "sanika@email.com",
+                        "contact": "1234567890"
+                    }
+                    //now we will send this object to the server whose url is as follows
+                    let url="/api/register";
+                    $.post(url, newCustomer, function(){
+                        console.log("data is posted to server");
+                    })
 
+                    });
+                }); 
+        
+        </script>
         </body>
         </html>
