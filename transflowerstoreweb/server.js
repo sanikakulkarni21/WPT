@@ -23,7 +23,7 @@ app.get("/",(req,res)=>{
 });
 
 app.post("/login",(request,response) => {
-    console.log(request.body);
+    console.log(request.body); 
     var user= request.body;
     //user credentials logic
 
