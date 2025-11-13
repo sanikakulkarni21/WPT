@@ -15,8 +15,8 @@
         <button onclick="onButtonClick()"> show data </button>
        <hr/>
 
-        <p id="parauser">Starting information </p>
-        <p id="paraLocation ">Starting information </p>
+        <p id="parauser">user name</p>
+        <p id="paraLocation">location </p>
        
        <script>
             var onButtonClick=function(){
@@ -31,8 +31,14 @@
 
                 var elementLocation= document.getElementById("paraLocation");
                 elementLocation.innerHTML=dataLocation;
+                //DOM (document object model)apis(builtin functions by dom)
+                //document.createElement()----will create new html element
+                //document.appendChild()-----will add new html element to document
+                //document.removeChild()-----will remove html element from document
+                //document.replaceChild()-----will replace html element in document
+                //document.setAttribute()-----will set attribute to html element
             }
             </script>
-
+                 
     </body>
 </html>
